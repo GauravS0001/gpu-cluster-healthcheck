@@ -1,0 +1,23 @@
+GPU INVENTORY
+-------------
+Tesla A100 80GB
+
+DRIVER VERSION
+--------------
+550.54.15
+
+CUDA VERSION
+------------
+12.4
+
+CONTAINER RUNTIME
+-----------------
+Healthy
+
+KUBERNETES NODES
+----------------
+gpu-node-1 Ready
+
+DEVICE PLUGIN
+-------------
+nvidia-device-plugin Running
