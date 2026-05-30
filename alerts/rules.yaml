@@ -1,0 +1,53 @@
+groups:
+
+- name: gpu-health
+
+  rules:
+
+  - alert: GPUDriverFailure
+    expr: gpu_driver_status == 0
+    for: 2m
+    labels:
+      severity: critical
+    annotations:
+      summary: NVIDIA Driver Failure
+
+  - alert: CUDAFailure
+    expr: gpu_cuda_status == 0
+    for: 2m
+    labels:
+      severity: critical
+    annotations:
+      summary: CUDA Runtime Failure
+
+  - alert: RuntimeFailure
+    expr: gpu_runtime_status == 0
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: Container Runtime Failure
+
+  - alert: HighGPUMemoryUsage
+    expr: gpu_memory_usage_percent > 90
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High GPU Memory Usage
+
+  - alert: LowClusterHealth
+    expr: gpu_health_score < 80
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: Cluster Health Degraded
+
+  - alert: KubernetesNodeFailure
+    expr: gpu_k8s_status == 0
+    for: 2m
+    labels:
+      severity: critical
+    annotations:
+      summary: Kubernetes Health Failure

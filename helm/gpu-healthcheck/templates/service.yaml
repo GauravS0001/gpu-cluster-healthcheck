@@ -1,0 +1,21 @@
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: gpu-healthcheck
+
+spec:
+
+  selector:
+    app: gpu-healthcheck
+
+  ports:
+
+  - name: api
+    port: 8000
+    targetPort: 8000
+
+  - name: metrics
+    port: 9100
+    targetPort: 9100

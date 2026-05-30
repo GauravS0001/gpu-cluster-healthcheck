@@ -1,0 +1,60 @@
+{
+  "title": "GPU Cluster Health",
+  "timezone": "browser",
+  "panels": [
+    {
+      "title": "Cluster Health Score",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "gpu_health_score"
+        }
+      ]
+    },
+    {
+      "title": "GPU Memory Usage",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "gpu_memory_usage_percent"
+        }
+      ]
+    },
+    {
+      "title": "Driver Status",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "gpu_driver_status"
+        }
+      ]
+    },
+    {
+      "title": "CUDA Status",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "gpu_cuda_status"
+        }
+      ]
+    },
+    {
+      "title": "Runtime Status",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "gpu_runtime_status"
+        }
+      ]
+    },
+    {
+      "title": "Kubernetes Status",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "gpu_k8s_status"
+        }
+      ]
+    }
+  ]
+}

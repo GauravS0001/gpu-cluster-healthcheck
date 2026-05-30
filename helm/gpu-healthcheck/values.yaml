@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: gpu-healthcheck
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 8000
+
+metrics:
+  port: 9100
